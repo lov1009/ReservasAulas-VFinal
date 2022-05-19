@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbPrincipalVP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="752.0" prefWidth="1161.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesalandalus.programacion.reservasaulas.mvc.vista.grafica.controladores.ControladorVP">
+   <children>
+      <MenuBar fx:id="menuBarVP">
+        <menus>
+          <Menu fx:id="menuMVP" mnemonicParsing="false" text="Menu">
+            <items>
+              <MenuItem fx:id="salirMIVP" mnemonicParsing="false" onAction="#salir" text="Salir" />
+            </items>
+          </Menu>
+          <Menu fx:id="menuIVP" mnemonicParsing="false" text="Info">
+            <items>
+              <MenuItem fx:id="acercaMIVP" mnemonicParsing="false" onAction="#acercaDe" text="Acerca de" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TabPane fx:id="tpVP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="726.0" prefWidth="1160.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="tAulasVP" text="Aulas">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="727.0" prefWidth="1160.0">
+                     <children>
+                        <VBox fx:id="vbAulasVP" layoutX="34.0" layoutY="14.0" prefHeight="632.0" prefWidth="1078.0">
+                           <children>
+                              <TableView fx:id="tvAulasVP" prefHeight="243.0" prefWidth="1059.0">
+                                 <columns>
+                                    <TableColumn fx:id="tcNombreAulaVP" prefWidth="75.0" text="Nombre" />
+                                    <TableColumn fx:id="tcPuestosAulaVP" prefWidth="75.0" text="Puestos" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                                 <VBox.margin>
+                                    <Insets bottom="30.0" top="10.0" />
+                                 </VBox.margin>
+                                 <contextMenu>
+                                    <ContextMenu fx:id="cmAulasVP">
+                                       <items>
+                                          <MenuItem fx:id="miAulasEliminarRVP" mnemonicParsing="false" onAction="#eliminarAulaVP" text="Eliminar" />
+                                       </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                              <HBox fx:id="hbvoxbotones" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="rbInsertarAulaVP" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addAulaVP" prefHeight="30.0" prefWidth="150.0" text="Insertar Aula" textAlignment="CENTER">
+                                       <HBox.margin>
+                                          <Insets left="100.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="btConsultarDispo" mnemonicParsing="false" onAction="#consultarDisponibilidad" prefHeight="30.0" prefWidth="181.0" text="Consultar Disponibilidad">
+                                       <HBox.margin>
+                                          <Insets left="120.0" />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+                                       </padding>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="100.0" right="100.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="120.0" right="100.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                              <Label fx:id="lbReseAula" alignment="TOP_LEFT" prefHeight="16.0" prefWidth="1102.0" text="Reservas por aula:">
+                                 <font>
+                                    <Font name="DejaVu Serif Condensed Bold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TableView fx:id="tvReserPorAulaVP" prefHeight="252.0" prefWidth="1078.0">
+                                 <columns>
+                                    <TableColumn fx:id="tcNombreAulaVPReserAula" prefWidth="113.0" text="Nombre Aula" />
+                                    <TableColumn fx:id="tcPuestosAulaVPReserAula" prefWidth="119.0" text="Puestos Aula" />
+                                    <TableColumn fx:id="tcNombreProfVPReserAula" prefWidth="163.0" text="Nombre Profesor" />
+                                    <TableColumn fx:id="tcCorreoProfVPReserAula" prefWidth="174.0" text="Correo Profesor" />
+                                    <TableColumn fx:id="tcTelProfVPReserAula" prefWidth="155.0" text="Telefono Profesor" />
+                                    <TableColumn fx:id="tcPerVPReserAula" prefWidth="284.0" text="Permanencia" />
+                                    <TableColumn fx:id="tcPuntosVPReserAula" prefWidth="70.0" text="Puntos" />
+                                 </columns>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tProVP" text="Profesores">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="668.0" prefWidth="1160.0">
+                     <children>
+                        <VBox fx:id="vbProVP" layoutX="49.0" layoutY="24.0" prefHeight="693.0" prefWidth="1062.0">
+                           <children>
+                              <TableView fx:id="tvProfVP" prefHeight="256.0" prefWidth="1062.0">
+                                 <columns>
+                                    <TableColumn fx:id="tcNombreProfVP" prefWidth="75.0" text="Nombre" />
+                                    <TableColumn fx:id="tcCorreoProfVP" prefWidth="75.0" text="Correo" />
+                                    <TableColumn fx:id="tcTelProfVP" prefWidth="75.0" text="Telefono" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                                 <VBox.margin>
+                                    <Insets bottom="30.0" />
+                                 </VBox.margin>
+                                 <contextMenu>
+                                    <ContextMenu fx:id="cmProVP">
+                                      <items>
+                                          <MenuItem fx:id="miProEliminarRVP" mnemonicParsing="false" onAction="#eliminarProVP" text="Eliminar" />
+                                      </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                              <Button fx:id="rbInsertarProVP" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addProVP" prefHeight="30.0" prefWidth="150.0" text="Insertar Profesor">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="465.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Label fx:id="lbResePro" alignment="TOP_LEFT" prefHeight="20.0" prefWidth="1051.0" text="Reservas por profesor:">
+                                 <font>
+                                    <Font name="DejaVu Serif Condensed Bold" size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TableView fx:id="tvReserPorProVP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="259.0" prefWidth="1059.0">
+                                 <columns>
+                                    <TableColumn fx:id="tcNombreProfVPReserPro" prefWidth="163.0" text="Nombre Profesor" />
+                                    <TableColumn fx:id="tcCorreoProfVPReserPro" prefWidth="151.0" text="Correo Profesor" />
+                                    <TableColumn fx:id="tcTelProfVPReserPro" prefWidth="145.0" text="Telefono Profesor" />
+                                    <TableColumn fx:id="tcNombreAulaVPReserPro" prefWidth="161.0" text="Nombre Aula" />
+                                    <TableColumn fx:id="tcPuestosAulaVPReserPro" prefWidth="107.0" text="Puestos Aula" />
+                                    <TableColumn fx:id="tcPerVPReserPro" prefWidth="262.0" text="Permanencia" />
+                                    <TableColumn fx:id="tcPuntosVPReserPro" prefWidth="72.0" text="Puntos" />
+                                 </columns>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tReserVP" text="Reservas">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="430.0" prefWidth="1160.0">
+                     <children>
+                        <VBox fx:id="vbReserVP" layoutX="34.0" layoutY="14.0" prefHeight="560.0" prefWidth="1069.0">
+                           <children>
+                              <TableView fx:id="tvReserVP" prefHeight="525.0" prefWidth="1069.0">
+                                 <columns>
+                                    <TableColumn fx:id="tcNombreProfVPReser" prefWidth="167.0" text="Nombre Profesor" />
+                                    <TableColumn fx:id="tcCorreoProfVPReser" prefWidth="158.0" text="Correo Profesor" />
+                                    <TableColumn fx:id="tcTelProfVPReser" prefWidth="161.0" text="Telefono Profesor" />
+                                    <TableColumn fx:id="tcNombreAulaVPReser" prefWidth="159.0" text="Nombre Aula" />
+                                    <TableColumn fx:id="tcPuestosAulaVPReser" prefWidth="103.0" text="Puestos Aula" />
+                                    <TableColumn fx:id="tcPerVPReser" prefWidth="250.0" text="Permanencia" />
+                                    <TableColumn fx:id="tcPuntosVPReser" prefWidth="72.0" text="Puntos" />
+                                 </columns>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                                 <contextMenu>
+                                    <ContextMenu fx:id="cmReserVP">
+                                      <items>
+                                        <MenuItem fx:id="miEliminarReserVP" mnemonicParsing="false" onAction="#eliminarReserVP" text="Eliminar" />
+                                      </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                           </children>
+                        </VBox>
+                        <Button fx:id="rbInsertarReserVP" layoutX="489.0" layoutY="600.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addReserVP" prefHeight="40.0" prefWidth="160.0" text="Insertar Reserva" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="489.0" AnchorPane.rightAnchor="511.0" AnchorPane.topAnchor="600.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</VBox>

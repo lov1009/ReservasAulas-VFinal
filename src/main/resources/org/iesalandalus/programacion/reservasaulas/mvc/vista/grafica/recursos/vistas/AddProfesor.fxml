@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbaddProfesor" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="296.0" prefWidth="453.0" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesalandalus.programacion.reservasaulas.mvc.vista.grafica.controladores.ControladorAddProfesor">
+   <children>
+      <Label fx:id="lbtituloAP" alignment="CENTER" prefHeight="16.0" prefWidth="327.0" text="Añadir Profesor" textAlignment="CENTER">
+         <font>
+            <Font name="DejaVu Serif Bold" size="16.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+      </Label>
+      <HBox fx:id="hbaddnombreProfesor" spacing="10.0">
+         <children>
+            <Label fx:id="lbnombreProfesor" prefHeight="26.0" prefWidth="130.0" text="Nombre:">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txnombreProfesor" alignment="TOP_LEFT" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox fx:id="hbaddcorreoProfesor" spacing="10.0">
+         <children>
+            <Label fx:id="lbcorreoProfesor" prefHeight="26.0" prefWidth="130.0" text="Correo electrónico:">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txcorreoProfesor" accessibleRole="SLIDER" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </TextField>
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox fx:id="hbaddtelProfesor" spacing="10.0">
+         <children>
+            <Label fx:id="lbtelProfesor" prefHeight="26.0" prefWidth="130.0" text="Teléfono:">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txtelProfesor" opacity="0.8" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </TextField>
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox fx:id="hbACprofesor" alignment="TOP_RIGHT" prefHeight="44.0" prefWidth="346.0" spacing="30.0">
+         <children>
+            <Button fx:id="btAceptarProfesor" mnemonicParsing="false" onAction="#aceptarAddProfesor" text="Aceptar">
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btCancelarProfesor" mnemonicParsing="false" onAction="#cancelarAddProfesor" text="Cancelar">
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+         <VBox.margin>
+            <Insets right="37.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+</VBox>

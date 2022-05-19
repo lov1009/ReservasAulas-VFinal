@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbAcercaDe" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="325.0" prefWidth="367.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="lbtituloInfo" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="383.0" text="Informacion:">
+         <font>
+            <Font name="DejaVu Serif Bold" size="16.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </Label>
+      <ImageView fx:id="ivLogoAD" fitHeight="184.0" fitWidth="178.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/photo_2022-05-15_13-08-22.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+         <VBox.margin>
+            <Insets bottom="20.0" left="100.0" right="50.0" top="20.0" />
+         </VBox.margin>
+      </ImageView>
+      <Label fx:id="lb1AD" alignment="CENTER" contentDisplay="CENTER" prefHeight="16.0" prefWidth="364.0" text="Programacion - JavaFX" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" />
+         </VBox.margin>
+      </Label>
+      <Label fx:id="lb4AD" alignment="CENTER" prefHeight="16.0" prefWidth="618.0" text="Laura Valverde Osa">
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" />
+         </VBox.margin>
+      </Label>
+   </children>
+</VBox>
