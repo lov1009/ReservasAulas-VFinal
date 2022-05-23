@@ -82,7 +82,13 @@ public class Aulas implements IAulas {
 
 	@Override
 	public List<String> representar() {
-		return null;
+
+		List<String> representacionAulas = new ArrayList<>();
+
+		for (Aula aula : getAulas()) {
+			representacionAulas.add(aula.toString());
+		}
+		return representacionAulas;
 	}
 
 }

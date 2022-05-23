@@ -8,6 +8,7 @@ import java.util.List;
 import javax.naming.OperationNotSupportedException;
 
 import org.bson.Document;
+import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Aula;
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Profesor;
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.negocio.IProfesores;
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.negocio.mongodb.utilidades.MongoDB;
@@ -84,7 +85,13 @@ public class Profesores implements IProfesores {
 
 	@Override
 	public List<String> representar() {
-		return null;
+
+		List<String> representacionProfesores = new ArrayList<>();
+
+		for (Profesor profesor : getProfesores()) {
+			representacionProfesores.add(profesor.toString());
+		}
+		return representacionProfesores;
 	}
 
 }

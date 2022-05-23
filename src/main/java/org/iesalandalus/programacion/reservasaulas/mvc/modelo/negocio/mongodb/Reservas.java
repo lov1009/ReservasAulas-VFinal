@@ -6,6 +6,7 @@ import static com.mongodb.client.model.Filters.eq;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.naming.OperationNotSupportedException;
@@ -260,12 +261,33 @@ public class Reservas implements IReservas {
 	@Override
 	public List<String> representar() {
 
-		return null;
+		List<String> representacionReservas = new ArrayList<>();
+
+		for (Reserva reserva : getReservas()) {
+			representacionReservas.add(reserva.toString());
+		}
+		return representacionReservas;
+
 	}
 
 	@Override
 	public List<Reserva> getReservasPermanencia(Permanencia permanencia) {
+		if (permanencia == null) {
+			throw new NullPointerException("ERROR: La permanencia no puede ser nula.");
+		}
 
-		return null;
+		Iterator<Reserva> it = getReservas().iterator();
+
+		List<Reserva> reservasPermanencia = new ArrayList<>();
+
+		while (it.hasNext()) {
+			Reserva reservaActual = it.next();
+
+			if (reservaActual.getPermanencia().equals(permanencia)) {
+				reservasPermanencia.add(new Reserva(reservaActual));
+			}
+		}
+		return reservasPermanencia;
+
 	}
 }
