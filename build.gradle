@@ -31,6 +31,9 @@ dependencies {
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:29.0-jre'
+    
+    //mongodb
+    implementation 'org.mongodb:mongo-java-driver:3.8.2'
 }
 
 

@@ -3,6 +3,7 @@ package org.iesalandalus.programacion.reservasaulas.mvc.modelo;
 
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.negocio.ficheros.FactoriaFuenteDatosFicheros;
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.negocio.memoria.FactoriaFuenteDatosMemoria;
+import org.iesalandalus.programacion.reservasaulas.mvc.modelo.negocio.mongodb.FactoriaFuenteDatosMongoDB;
 
 /**
  * @author laura
@@ -10,19 +11,23 @@ import org.iesalandalus.programacion.reservasaulas.mvc.modelo.negocio.memoria.Fa
  */
 public enum FactoriaFuenteDatos {
 
-	MEMORIA(){
+	MEMORIA() {
 		public IFuenteDatos crear() {
 			return new FactoriaFuenteDatosMemoria();
 		}
 	},
-	
-	FICHEROS(){
+
+	FICHEROS() {
 		public IFuenteDatos crear() {
 			return new FactoriaFuenteDatosFicheros();
 		}
+	},
+	MONGODB() {
+		public IFuenteDatos crear() {
+			return new FactoriaFuenteDatosMongoDB();
+		}
 	};
-	
 
 	public abstract IFuenteDatos crear();
-	
+
 }
